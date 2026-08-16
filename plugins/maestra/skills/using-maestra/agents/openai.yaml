@@ -1,0 +1,6 @@
+interface:
+  display_name: "Use Maestra"
+  short_description: "Activate the opt-in Maestra workflow"
+  default_prompt: "Use $maestra:using-maestra to activate Maestra for this development workflow."
+policy:
+  allow_implicit_invocation: false

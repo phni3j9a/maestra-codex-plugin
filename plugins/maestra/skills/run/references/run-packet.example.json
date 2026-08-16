@@ -1,0 +1,64 @@
+{
+  "schema_version": 2,
+  "run_id": "R001",
+  "title": "Introduce authentication provider abstraction",
+  "goal": "Existing API-key auth uses the approved provider abstraction without changing behavior",
+  "spec_path": "spec.md",
+  "plan_path": "plan.md",
+  "base_commit": "0123456789abcdef0123456789abcdef01234567",
+  "acceptance_criteria": ["AC-001"],
+  "architectural_invariants": ["Public authentication API remains backward compatible"],
+  "non_goals": ["OAuth implementation is not part of this Run"],
+  "integration_verification_plan": [
+    "Run the complete authentication test suite after all Task commits",
+    "Verify existing API-key behavior through the public API"
+  ],
+  "main_gate_questions": [
+    "Does the abstraction support the intended future OAuth path without leaking API-key details?"
+  ],
+  "tasks": [
+    {
+      "id": "T001",
+      "title": "Add AuthProvider and migrate API-key implementation",
+      "objective": "Route existing API-key authentication through the approved provider abstraction",
+      "depends_on": [],
+      "acceptance_criteria": ["AC-001"],
+      "target_files": [
+        "src/auth/provider.ts",
+        "src/auth/api-key.ts",
+        "src/auth/index.ts",
+        "tests/auth/provider.test.ts"
+      ],
+      "implementation_steps": [
+        "Define AuthProvider using the interface specified in the approved Plan",
+        "Move the existing API-key implementation behind ApiKeyProvider",
+        "Update callers to depend on AuthProvider without changing public behavior"
+      ],
+      "design_decisions": [
+        "AuthProvider owns authentication behavior; token persistence remains separate",
+        "Existing public API remains unchanged"
+      ],
+      "boundaries": ["Authentication subsystem only"],
+      "constraints": ["Preserve existing API-key behavior"],
+      "non_goals": ["Do not implement OAuth in this Task"],
+      "verification_plan": [
+        "Run existing authentication regression tests",
+        "Add provider contract tests for API-key behavior"
+      ],
+      "review_focus": ["abstraction leakage", "backward compatibility", "error handling"],
+      "expected_evidence": ["auth regression tests pass", "provider contract test passes"],
+      "open_questions": []
+    }
+  ],
+  "models": {
+    "orchestrator": {"model": "gpt-5.6-terra", "reasoning_effort": "xhigh"},
+    "implementer": {"model": "gpt-5.6-luna", "reasoning_effort": "max"},
+    "reviewer": {"model": "gpt-5.6-sol", "reasoning_effort": "xhigh"}
+  },
+  "review": {
+    "max_rounds": 2,
+    "max_major_findings": 5,
+    "finding_freeze": true,
+    "minor_findings_block": false
+  }
+}

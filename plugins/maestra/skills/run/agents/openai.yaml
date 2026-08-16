@@ -1,0 +1,6 @@
+interface:
+  display_name: "Maestra Run"
+  short_description: "Delegate one approved Run to fresh agents"
+  default_prompt: "Use $maestra:run to execute the selected approved Run and stop before Main Gate."
+policy:
+  allow_implicit_invocation: false

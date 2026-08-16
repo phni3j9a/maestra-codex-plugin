@@ -1,0 +1,16 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "maestra",
+  "version": "0.3.2+codex.20260815151220",
+  "description": "Explicitly activated, context-isolated multi-agent execution with Main-owned planning and bounded review.",
+  "author": {
+    "name": "Maestra contributors"
+  },
+  "keywords": [
+    "codex",
+    "multi-agent",
+    "orchestration",
+    "context-isolation",
+    "review"
+  ]
+}

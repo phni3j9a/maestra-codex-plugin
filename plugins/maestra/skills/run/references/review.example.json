@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "run_id": "R001",
+  "task_id": "T001",
+  "candidate_tree": "0000000000000000000000000000000000000000",
+  "round": 1,
+  "verdict": "CHANGES_REQUESTED",
+  "findings": [
+    {
+      "id": "T001-F01",
+      "severity": "major",
+      "category": "correctness",
+      "location": "src/example.py:42",
+      "summary": "Required edge case is handled incorrectly.",
+      "evidence": "The diff returns the success path for the documented failure input, and verification does not cover it.",
+      "required_change": "Handle the failure input and add a deterministic regression test.",
+      "introduced_by_fix": false,
+      "exception": null,
+      "resolution": null
+    }
+  ],
+  "residual_risks": []
+}

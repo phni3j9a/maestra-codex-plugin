@@ -1,0 +1,33 @@
+{
+  "name": "maestra",
+  "version": "0.3.2+codex.20260815151220",
+  "description": "Explicitly activated, context-isolated multi-agent execution with Main-owned planning and bounded review.",
+  "author": {
+    "name": "Maestra contributors"
+  },
+  "keywords": [
+    "codex",
+    "multi-agent",
+    "orchestration",
+    "context-isolation",
+    "review"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Maestra",
+    "shortDescription": "Isolated multi-agent delivery",
+    "longDescription": "Installing Maestra does not affect normal Codex behavior. Explicitly invoke using-maestra to keep architecture and detailed implementation planning in Main Sol while fresh Terra orchestrators execute approved Runs through Luna implementation and independent Sol review.",
+    "developerName": "Maestra contributors",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Run-level context isolation",
+      "Bounded independent review",
+      "Semantic Main gates"
+    ],
+    "defaultPrompt": [
+      "Use $maestra:using-maestra to activate Maestra for this development workflow.",
+      "Use $maestra:doctor to verify routing before the first Maestra execution."
+    ],
+    "brandColor": "#4338CA"
+  }
+}

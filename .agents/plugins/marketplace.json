@@ -1,0 +1,20 @@
+{
+  "name": "maestra-local",
+  "interface": {
+    "displayName": "Maestra Local"
+  },
+  "plugins": [
+    {
+      "name": "maestra",
+      "source": {
+        "source": "local",
+        "path": "./plugins/maestra"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

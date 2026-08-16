@@ -1,0 +1,6 @@
+interface:
+  display_name: "Maestra Spec"
+  short_description: "Create an approvable durable specification"
+  default_prompt: "Use $maestra:spec to turn our completed discussion into an approvable specification."
+policy:
+  allow_implicit_invocation: false

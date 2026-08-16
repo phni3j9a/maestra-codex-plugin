@@ -1,0 +1,6 @@
+interface:
+  display_name: "Maestra Plan"
+  short_description: "Split an approved Spec into Runs and Tasks"
+  default_prompt: "Use $maestra:plan to create the Run and Task plan from the approved specification."
+policy:
+  allow_implicit_invocation: false

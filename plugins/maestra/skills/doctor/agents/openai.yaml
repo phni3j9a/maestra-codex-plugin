@@ -1,0 +1,6 @@
+interface:
+  display_name: "Maestra Doctor"
+  short_description: "Verify routing and repository preconditions"
+  default_prompt: "Use $maestra:doctor to verify this repository before the first Maestra Run."
+policy:
+  allow_implicit_invocation: false

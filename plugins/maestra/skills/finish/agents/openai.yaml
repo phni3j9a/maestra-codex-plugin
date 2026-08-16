@@ -1,0 +1,6 @@
+interface:
+  display_name: "Maestra Finish"
+  short_description: "Run bounded final review and report completion"
+  default_prompt: "Use $maestra:finish after all planned Runs and Main Gates are complete."
+policy:
+  allow_implicit_invocation: false
